@@ -1,0 +1,37 @@
+﻿@page
+@model RegisterClients.Pages.Clients.IndexModel
+@{
+}
+<br>
+<h2>Clients Registration</h2></br>
+<a class="btn btn-info btn-sm" href="/Clients/Create">Register Client</a></br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone<th>
+        <th>Address</th>
+        <th>Created at</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.ListaClientes)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.name</td>
+                <td>@i.email</td>
+                <td>@i.Phone</td>
+                <td>@i.address</td>
+                <td>@i.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Clients/editclient?id=@i.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Clients/delete?id=@i.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
